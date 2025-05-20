@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #g-game{
+        width: 50%;
+        height: 50vh;
+        margin: auto;
+        background-color: crimson;
+    }
+    #g-game h1{
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+    }
+</style>
+<body>
+    <div id="g-game">
+        <h1>Guessing Game</h1>
+        <div>
+            <button onclick="showInputValue()">Click Me when you're ready to start</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const minNum = 1;
+    const maxNum = 30;
+    const answer = Math.floor(Math.random() * (maxNum - minNum + 1));
+
+    let attempts = 0;
+    let guess;
+    let running = true;
+
+    function showInputValue(){
+        while(running){
+
+guess = window.alert(`Guess a number between ${minNum} and ${maxNum}`);
+guess = Number(guess);
+
+if(guess < minNum || guess > maxNum){
+    window.alert(`Please enter a number between the range of ${minNum} and ${maxNum}`)
+}
+else if(isNaN(guess)){
+    window.alert(`Please read before you do anything and enter a valid number for me joor`)
+}
+
+else{
+    attempts++;
+    if(guess < answer){
+        window.alert("Your guess is too low, try again")
+    }
+    else if(guess > answer){
+        window.alert("Your guess is too high, try again")
+    }
+    else{
+        window.alert(`CORRECT!!! The answer was ${answer}. It took you ${attempts} attempts`)
+        running = false;
+    }
+}
+
+}   
+    }
+    
+</script>

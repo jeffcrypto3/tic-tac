@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: sans-serif;
+    }
+    body{
+        background-color: rgb(74, 74, 74);
+    }
+    .hrs-cont{
+        margin: auto;
+        background-color: black;
+        width: 40%;
+        height: 60vh;
+        border-radius: 10px;
+        border: 1px solid gainsboro;
+        color: white;
+        padding: 20px;
+    }
+
+    .hrs-cont h2{
+        text-align: center;
+        /* color: white; */
+    }
+    .hrs-input{
+        width: 60%;
+        margin: auto;
+    }
+    #nHrs{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+    }
+    #nHrss{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+    }
+    .hrs-input2{
+        width: 60%;
+        margin: auto;
+    }
+    button{
+        background-color: crimson;
+        color: white;
+        width: 30%;
+        height: 40px;
+        border-radius: 9px;
+        margin-left: 28vh;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    #result{
+        margin: auto;
+        width: 40%;
+        color: white;
+        font-size: 30px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <div class="hrs-cont">
+         <h2>Pay Calculator</h2>
+         <br>
+        <div class="hrs-input">
+            <label for="hours">Input no of hours: </label>
+            <input type="number" id="nHrs"> <br>
+        </div>
+        <br>
+        <div class="hrs-input2">
+            <label for="hours">Rate per hour: </label>
+            <input type="number" id="nHrss">
+        </div>
+        <br><br><br>
+        <button onclick="calculate()">Submit</button>
+        <br>
+        <p id="result"></p>
+         
+    </div>
+</body>
+</html>
+<script>
+    
+    function calculate() {
+        const hour = document.getElementById('nHrs').value;
+        const rate = document.getElementById('nHrss').value;
+        const result = document.getElementById('result');
+
+        if (!hour && !rate) {
+            result.innerHTML = 'Please enter values for hours and rate';
+        }
+        else if (!hour) {
+            result.innerHTML = 'Please enter value for hour'
+        }
+        else if (!rate) {
+            result.innerHTML = 'Please enter value for rate'
+        }
+        else{
+            const calculate = hour * rate
+            result.innerHTML = `You earned $${calculate}`
+        }
+    }
+</script>

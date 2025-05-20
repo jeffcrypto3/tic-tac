@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        background-color: indigo;
+    }
+    #tic-sty{
+        font-family: "Permanent Marker" , cursive;
+        margin: auto;
+        text-align: center;
+    }
+    
+
+    #cellCont{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        margin: auto;
+        width: 200px;
+
+    }
+
+    .cell{
+        width: 75px;
+        height: 75px;
+        background-color: ivory;
+        border: 2px solid;
+        font-size: 50px;
+        cursor: pointer;
+        box-shadow: 0 0 0 5px;
+    }
+</style>
+
+<body>
+    <div id="tic-sty">
+        <h1>Tic Tac Toe</h1>
+        <br>
+        <div id="cellCont">
+            <div class="cell" id="cell0"></div>
+            <div class="cell" id="cell1"></div>
+            <div class="cell" id="cell2"></div>
+            <div class="cell" id="cell3"></div>
+            <div class="cell" id="cell4"></div>
+            <div class="cell" id="cell5"></div>
+            <div class="cell" id="cell6"></div>
+            <div class="cell" id="cell7"></div>
+            <div class="cell" id="cell8"></div>
+        </div>
+        <br>
+        <p class="fs-2 text-secondary" id="playerTurn" ></p>
+        <p class="fs-2 text-secondary" id="playerTurn2" ></p>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let player = true
+    let cells = document.querySelectorAll('.cell');
+    let playerTurn = document.getElementById('playerTurn')
+
+
+    for (const cell of cells) {
+        cell.onclick = function () {
+            if (!cell.innerHTML){
+                player ? (cell.innerHTML = 'X', playerTurn.innerHTML = `Player O's turn`, player = false) : (cell.innerHTML = 'O', playerTurn.innerHTML = `Player   X's turn` , player = true)
+            }
+            knowWinner()
+        }
+    }
+
+    
+    
+    function getCellValues(i) {
+        return document.getElementById('cell' + i).innerHTML;
+    }
+    console.log(getCellValues(1));
+    
+    function knowWinner() {
+        winCondition = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ]
+        for (const element of winCondition) {
+            // const element = winCondition[i];
+            let a = element[0]
+            let b = element[1]
+            let c = element[2]
+            
+            if (getCellValues(a) != '' && getCellValues(a) === getCellValues(b) && getCellValues(b) === getCellValues(c)) {
+                const playerTurn2 = document.getElementById('playerTurn');
+                playerTurn2.innerHTML = `Player ${getCellValues(a)} wins`
+
+            }
+        }
+    }
+    
+
+
+
+</script>

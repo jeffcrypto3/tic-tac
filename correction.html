@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="userGuess" min = '1' max = '10'>
+    <button onclick="checkUserGuess()">Confirm Guess</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function checkUserGuess() {
+        const guess = document.getElementById('userGuess').value
+        const result = document.getElementById('result')
+
+        let randNum = Math.floor(Math.random() * 10 + 1)
+        console.log(randNum);
+        console.log(guess);
+        
+        if(randNum == guess){
+            result.innerHTML = `You guessed correctly. The number was ${randNum}`
+        }
+
+        else{
+            result.innerHTML = `You guessed wrong, the computer guessed ${randNum}`
+        }
+
+    }
+</script>

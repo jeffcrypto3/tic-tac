@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <button id="addNum" onclick="add()">Add</button>
+        <h1 id="pgNum"></h1>
+        <br>
+        <button id="subNum" onclick="subtract()">subtract</button>
+        <h1 id="pgNums"></h1>
+
+        <br>
+        <label for="Input Grade"></label>
+        <input type="number" id="scoreInput">
+        <button onclick="Grades()">Check Grade</button>
+        <p id="result"></p>
+    </main>
+</body>
+</html>
+
+<script>
+    //pre increment
+    let index = 2
+    console.log(++index);
+    console.log(index);
+
+    //post increment
+    let int = 0
+    console.log(int++);
+    console.log(int);
+
+
+    let pageNum = document.getElementById('pgNum')
+    // let pageNums = document.getElementById('pgNums')
+    let indexer = 0
+
+    
+    function add() {
+        console.log(indexer);
+        if (indexer >= 5) {
+            indexer = 0
+        } else{
+            indexer++
+        }
+        pageNum.innerHTML = indexer
+        
+        
+    }
+
+
+    pageNum.innerHTML = indexer    
+    function subtract() {
+        console.log(indexer);
+        if (indexer <= 0) {
+            indexer = 5
+    } else{
+        indexer--
+    }
+    pageNum.innerHTML = indexer
+    }
+
+
+    //conditional statement
+    let check = 4 > 8
+    if (!check) {
+        console.log('Lets concentrate');
+    }
+
+    if (true) {
+        console.log('Na true');
+        
+    } else{
+        console.log('Na lie');
+        
+    }
+    
+
+    // else if summer, winter, autumn, spring, cloudy, rainy
+
+    let checker = 'Summer'
+    if (checker ==='rainy') {
+        console.log("You definitely need an umbrella");
+        
+    } else if (checker === 'cloudy') {
+        console.log("You need an umbrella");
+        
+    } else if (checker === 'spring') {
+        console.log("You may need an umbrella");
+    } else if (checker === 'autumn') {
+        console.log("You might need an umbrella");
+    } else if (checker === 'winter') {
+        console.log("You must need an umbrella");
+    } else{
+        console.log("You don't need an umbrella");
+    }
+
+
+    let Grade = Number(100)
+
+    function Grades() {
+        let grde = document.getElementById('scoreInput').value;
+        
+        if (grde >= 80 && Grade <= 100) {
+        console.log("Your Grade is A");
+        result.innerHTML = "Your Grade is A"
+    } else if (grde >= 70 && grde <= 79) {
+        console.log("Your Grade is B");
+    } else if (grde >= 60 && grde <= 69) {
+        console.log("Your Grade is C");
+    } else if (grde >= 50 && grde <= 59) {
+        console.log("Your Grade is D");
+    } else if (grde <= 40 && grde <= 49) {
+        console.log("Your Grade is E");
+    } else {
+        console.log("You failed");
+    } 
+    
+
+    }
+
+    //Ternary Operators
+    let isRaining = false
+    isRaining ? console.log("You need a rain coat") : console.log("You don't need a rain coat");
+
+    
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputValue">
+    <button onclick="addNum()">Add</button>
+</body>
+</html>
+
+<script>
+    let input = document.getElementById('inputValue')
+    function addNum() {
+        console.log(input.value);
+        console.log(+(input.value[0]));
+        
+
+        let ans = +input.value[0] + +input.value[2]
+        console.log(ans);
+        
+        
+        
+    }
+</script>

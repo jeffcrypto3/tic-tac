@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myText">Welcome to Python Class</p>
+    <h4 id="learnText">I'm Learning Javascript</h4>
+    <div id="newDiv"></div>
+
+    <section id="secSty">
+        <button>ClickMe</button>
+        <h1>Hi Everybody</h1>
+    </section>
+
+    <div id="anotherDiv"></div>
+</body>
+</html>
+<script>
+    console.log("Javascript");
+    var thisClass = "Javascript Class"
+
+    thisClass = "Welcome To Javascript"
+    console.log(thisClass);
+
+    let anotherClass = "Python Class"
+    console.log(anotherClass);
+
+    const nextClass = "HTML CSS"
+    console.log(nextClass);
+    
+    
+    var firstName = "Feranmi"
+    console.log(firstName);
+
+    var lastName = "Adeyemo"
+    console.log(lastName);
+    
+    let ourText = document.getElementById("myText")
+    ourText.innerHTML = "Welcome to Javascript Class"
+
+    var theText = document.getElementById("learnText")
+    theText.innerHTML = "I'll be a great dev"
+    console.log(theText.innerHTML);
+
+    let newDiv = document.getElementById("newDiv")
+    newDiv.innerHTML = `<section>
+        <button>Click Me</button>
+        <h1>Hello Everybody</h1>
+    </section>`
+    
+
+    let sectnSty = document.getElementById("secSty")
+
+    sectnSty.innerHTML = `<section>
+        <button>Don't click me</button>
+        <h1>Hello Everybody</h1>
+    </section>`
+
+    let anotherDiv = document.getElementById("anotherDiv")
+    anotherDiv.style.width = "300px"
+    anotherDiv.style.height = "200px"
+    anotherDiv.style.backgroundColor = "red"
+    anotherDiv.style.borderRadius = "20px"
+
+
+    anotherDiv.innerHTML = "This is interesting"
+    anotherDiv.style.textAlign = "center"
+
+
+
+    let jSty = "Jscript is awesomeeee"
+    alert(jSty)
+
+
+    let delSty = "Are you sure you want to delete"
+    confirm(delSty)
+
+    let userInfo = prompt("What is your name")
+    console.log(userInfo);
+    
+</script>

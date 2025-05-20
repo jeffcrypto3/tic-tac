@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="iLove"></div>
+    </div>
+    <input type="text" id="myInput">
+    <button onclick="showInputValue()">Click Me</button>
+</body>
+</html>
+
+<script>
+    // string methods
+
+    //includes
+    let ugo = 'we are the best'
+    console.log(ugo.includes(' best'));
+
+    //startswith
+    console.log(ugo.startsWith('he'));
+    
+
+    //concatenation
+    let firstName = 'Adedeji'
+    let lastName = 'Adedotun'
+    let fullName = firstName.concat(' ' ,lastName, ' ', 'Anthony')
+    console.log(fullName);
+
+    let secFullName = firstName + ' ' + lastName
+
+    let love = 'I' + ' ' + 'love' + ' ' + 'javascript'
+    console.log(love);
+
+    //interpolation
+    let hobby = 'javascript'
+    console.log(`I love ${hobby}`);
+    
+    
+    let iLove = document.getElementById('iLove')
+    iLove.innerHTML = `<h3>I love ${hobby}</h3>`
+
+    console.log(iLove.innerHTML);
+
+    let a = 3
+    let b = 4
+
+    console.log(`The addition of ${a} and ${b} is equals to ${a + b}`);
+
+
+    //length
+    let ans = `The addition of ${a} and ${b} is equals to ${a + b}`
+    console.log(ans.length);
+
+    //index
+    console.log(hobby[hobby.length - 1]);
+
+    //uppercase
+    console.log(hobby.toUpperCase());
+
+    //lowecase
+    console.log(hobby.toLowerCase());
+
+    //trim
+    let myOtherName = "       Anthony     "
+    console.log(myOtherName.trim());
+
+    //replace
+    let subject = 'I love python'
+    console.log(subject.replace('python', 'Javascript'));
+    console.log(subject);
+    
+
+    //slice
+    console.log(subject.slice(2, 6));
+
+
+    //split
+    console.log(subject.split(''));
+    
+
+
+    function showInputValue() {
+
+        console.log(myInput.value.trim());       
+    }
+
+    
+    //number, ParseInt, +
+    let num1 = '10.9'
+    let num2 = '20'
+
+    console.log(parseInt(num1) + + parseInt(num2));
+
+    console.log(parseInt(num1));
+    console.log(Number(num1));
+    console.log(+(num1));
+    
+    
+    
+    
+    
+    //three wyas for type casting  parst integer, number constructor, add a plus sign to the front of the string
+    
+    let censoredWord = 'Fuck'
+    function showInputValue() {
+        
+    }
+    
+    
+    
+    
+</script>
