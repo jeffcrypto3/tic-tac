@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+</head>
+<style>
+  body {
+    background-color: firebrick;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .multiCont {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: darkcyan;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  .multiCont h1 {
+    text-align: center;
+    color: white;
+  }
+
+  .multiCont2 {
+    text-align: center;
+  }
+
+  .multiCont2 label {
+    display: block;
+    margin: 10px 0 5px;
+    color: white;
+  }
+
+  .multiCont2 input {
+    width: 80%;
+    max-width: 300px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid gainsboro;
+    font-size: 16px;
+  }
+
+  .multiCont button {
+    width: 40%;
+    max-width: 200px;
+    height: 40px;
+    margin: 10px 5px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: aqua;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+  }
+
+  .multiCont button:hover {
+    background-color: lightseagreen;
+    color: white;
+  }
+
+  #displayTable {
+    margin-top: 20px;
+    background-color: aqua;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+
+  #displayTables h2 {
+    margin-top: 1rem;
+    color: darkblue;
+  }
+
+  #displayTables p {
+    margin: 4px 0;
+  }
+
+  @media (max-width: 480px) {
+    .multiCont2 input {
+      width: 90%;
+    }
+
+    .multiCont button {
+      width: 80%;
+    }
+  }
+</style>
+<body>
+    <div class="multiCont">
+        <h1>Multiplication Table</h1>
+        <br>
+        <div class="multiCont2">
+            <label for="" >Starting Number:</label>
+            <input id="firstNum" type="number" min="1" placeholder="From...">
+            <br><br>
+            <label for="">Ending Number:</label>
+            <input id="secNum" type="number" min="1" placeholder="To..">
+            <br><br>
+            <button onclick="generate()">Generate Tables</button>
+            <br><br>
+            <button onclick="refresh()">Refresh</button>
+        </div>
+        
+        <div id="displayTable">
+            <div id="displayTables"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function generate() {
+        let input1 = document.getElementById('firstNum').value
+        let input2 = document.getElementById('secNum').value
+        let display = document.getElementById('displayTables')
+
+        display.innerHTML = ''
+
+        for (let num = input1; num <= input2 ; num++) {
+             display.innerHTML += `<h2>Table ${num}</h2>`;
+
+            for (let i = 1; i <= 12; i++) {
+                display.innerHTML += `<p> ${num} * ${i} = ${num * i}</p>`       
+            }
+            
+        }
+
+    }
+
+    function refresh() {
+        document.getElementById('displayTables').innerHTML = ''
+        document.getElementById('firstNum').value = ''
+        document.getElementById('secNum').value = ''
+
+    }
+</script>
